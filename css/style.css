@@ -7,6 +7,7 @@
     --mic-gray: #6B7376;
     --msg-green: #D5F9BA;
     --read-azure: #259AC0;
+    --notific-azure: #8EDAFC;
 }
 
 *  {
@@ -41,6 +42,10 @@ body {
     justify-content:space-between;
 }
 
+.mg-l1 {
+    margin-left: 1rem;
+}
+
 header {
     border: 1px solid black;
 }
@@ -49,8 +54,10 @@ header {
 .container {
     width: 90%;
     max-width: 1480px;
-    height: 100vh;
+    height: 95vh;
     margin: 0 auto;
+    position: relative;
+    top: 2rem;
     
     
     /* debug */
@@ -71,7 +78,7 @@ header {
 }
 
 .avatar {
-    width: 35%;
+    width: 24%;
     object-fit: cover;
     border-radius: 50%;
     line-height: 6rem;
@@ -97,7 +104,7 @@ header {
 .side-contacts {
     display: flex;
     flex-wrap: wrap;
-    width: 30%;
+    width: 40%;
 
    
 
@@ -107,13 +114,91 @@ header {
 
 /* /LEFT SIDE HEADER */
 
+/* LEFT SIDE MAIN */
+
+.bell-icon {
+    font-size: 2rem;
+    line-height: 6.5rem ;
+    vertical-align: center;
+    border-radius: 50%;
+    background-color: white;
+    padding: 1.2rem;
+    
+    
+    
+    
+    
+
+   
+}
 
 
 
+   
+  
+    
+   /* width: 6.8rem;
+   height: 5rem;
+   border-radius: 50%;
+   vertical-align: center;
+   padding-left: 0.2rem;
+   padding-top: 0.2rem;
+   background-color: white;  
+     */
+}
+
+.alert {
+    height: 6.5rem;
+    background-color: var(--notific-azure);
+    flex-wrap: nowrap;
+    /* line-height: 6.5rem; */
+}
+
+.alert-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    vertical-align: center;
+    margin-left: 1rem;
+    margin-top: 2rem;
+ 
+    
+}
+.text-primary {
+    font-size: 1.5rem;
+
+   
+    
+    
+}
+
+.text-sub {
+    font-size: 1.2rem;
+    
+}
+
+.text-sub a {
+    color: var(--mic-gray);
+}
+
+/* /LEFT SIDE MAIN */
+
+
+
+/* RIGHT SIDE */
+
+/* RIGHT SIDE HEADER */
+
+#right-head {
+   
+    width: 100%;
+    background-color: lightcyan;
+    height: 6rem;
+}
 
 /* MAIN MESSAGES */
 .main-msg {
-    width: 70%;
+    width: 60%;
     display: flex;
     flex-wrap: wrap;
 
@@ -124,8 +209,3 @@ header {
 
 
     
-#right-head {
-   
-    width: 100%;
-    background-color: lightcyan;
-}
