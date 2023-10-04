@@ -32,7 +32,6 @@ body {
 
 .row {
     display: flex;
-    flex-direction: row;
 
 }
 
@@ -40,9 +39,14 @@ body {
     justify-content:space-between;
 }
 
+header {
+    border: 1px solid black;
+}
+
 
 .container {
     width: 90%;
+    max-width: ;
     height: 100vh;
     margin: 0 auto;
     
@@ -53,7 +57,21 @@ body {
     background-color: azure;
 }
 
+/* LEFT SIDE */
+
+#left-head {
+
+    background-color: orange;
+    min-height: 5rem;
+    width: 100%;
+
+   
+
+}
+
 .side-contacts {
+    display: flex;
+    flex-wrap: wrap;
     width: 30%;
 
    
@@ -62,11 +80,29 @@ body {
     border: 1px solid black;
 }
 
+.avatar {
+    width: 20%;
+}
+
+
+
+
+
+/* MAIN MESSAGES */
 .main-msg {
     width: 70%;
+    display: flex;
+    flex-wrap: wrap;
 
     
     border: 1px solid black;
     background-color: lightsalmon;
 }
+
+
     
+#right-head {
+   
+    width: 100%;
+    background-color: lightcyan;
+}
