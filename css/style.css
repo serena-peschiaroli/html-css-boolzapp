@@ -70,6 +70,7 @@ img {
 #left-head {
     display: none;
     height: 80px;
+    border-right: 1px solid gray;
 }
 
 @media screen and (min-width: 540px) {
@@ -89,27 +90,6 @@ img {
     }
 }
 
-    
-
-
-
-.column {
-    display: flex;
-    flex-direction: column;
-}
-
-.row {
-    display: flex;
-
-}
-
-
-
-
-
-/* LEFT SIDE */
-
-/* LEFT SIDE HEADER */
 
 .container-left {
     display: none;
@@ -122,17 +102,17 @@ img {
         flex-direction: column;
         width: 80px;
         height: 100%;
-        border: 1px solid black;
+        
     }
 }
 
 @media screen and (min-width: 991px) {
     .container-left {
         display: flex;
-        flex-wrap: nowrap;
+        flex-direction: column;
         width: 300px;
         height: 100%;
-        border: 1px solid black;
+        
     }
 }
 
@@ -140,6 +120,7 @@ img {
     display: flex;
     justify-content: space-between;
     display:none;
+    background-color: var(--bar-gray);
     
 }
 
@@ -158,7 +139,6 @@ img {
         display: flex;
         flex-wrap: nowrap;
         height: 80px;
-        background-color: blue;
 
     }
     
@@ -173,15 +153,19 @@ img {
     vertical-align: center;
     justify-content: flex-end;
     display: flex;
+    display: none;
 }
     
     
 
 .alert {
     display: flex;
-    flex-wrap: nowrap;
+    flex-direction: row;
     height: 70px;
     padding: 0.5rem;
+    display: none;
+    background-color: var(--notific-azure);
+
 
 }
 
@@ -194,16 +178,35 @@ img {
     vertical-align: center;
     border-radius: 50%;
     background-color: white;
+    display: none;
 }
 
+.alert-text {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    align-items: center;
+    justify-content: center;
+    display: none;       
+}
 
+@media screen and (min-width: 991px) {
+    .alert,
+    .alert-text {
+        display: flex;
+    }
 
+    .bell-icon {
+        display:  block;;
+    }
+    
+}
 
 
 .search-bar {
 
-    height: 60px;
-    line-height: 60px;
+    height: 50px;
+    line-height: 50px;
     width: 300px;
     vertical-align: center;
     text-align:  center;
@@ -211,29 +214,118 @@ img {
     display: flex;
     flex-direction: row;
     display: none;
-
-    
-
+    justify-content: center;
+    align-items: center;
+    background-color: var(--icon-gray);
 }
 .search-btn {
    
     background-color: transparent;
+    
     border: none;
-    height: 60px
+    height: 60px;
+    display: none;
+    position: relative;
+    top: 8px;
+    left: 30px;
     
 
 }
 
+#search {
+    display: none;
+    vertical-align: center;
+    text-align: center;
+    height: 40px;
 
-#contact-over {
+}
+
+@media screen and (min-width: 991px) {
+    
+    .search-bar{
+        display: flex;
+    }
+
+    #search {
+        display: flex;
+    }
+
+    .search-btn {
+        display: block;
+    }
+
+
+    
+}
+
+.chats {
+    overflow-y: scroll;
+    display: flex;
+    
+    display: none;
+    background-color: white;
+    flex-grow: 1;
+}
+
+.msg-list {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid gray;
+   
+    
+}
+
+.preview {
     display: flex;
     flex-direction: column;
-    overflow-y: scroll;
-    align-self: stretch;
-    
+    align-items: center;
+    justify-content: center;
+    vertical-align: center;
+    display: none;
+}
+
+.msg-list .sent-time {
+    align-items: end;
 
     
 }
+
+.sent-time {
+    
+    padding-right: 2px;
+    display: block;
+    display: none;
+}
+@media screen and (min-width: 540px) {
+
+    
+    .ctc-img, 
+    .chats {
+        display: block;
+        
+    }
+
+}
+    
+
+
+@media screen and (min-width: 991px) {
+    .chat,
+    .msg-list,
+    .preview,
+    .ctc-name,
+    .ctc-preview,
+    li {
+        display: flex;
+    }
+
+    .sent-time {
+        display: block;
+    }
+
+    
+}
+
 
 /* RIGHT SIDE */
 
@@ -266,11 +358,12 @@ img {
 
 #right-head {
    
-    background-color: lightcyan;
+    background-color: var(--bar-gray);
     height: 80px;
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 0.5rem;
 
 }
 
@@ -280,19 +373,6 @@ img {
     gap: 0.5rem;
     vertical-align: center;
 
-}
-
-/* MAIN MESSAGES */
-/* .main-msg {
-    height: calc( 100% - 80px - 80px);
-    overflow-y: scroll;   
-    display: flex;
-    flex-direction: column;
-    border: 1px solid black;
-    background-image: url(../img/mine.jpg);
-    background-size: cover;
-    gap: 1.5rem;
-    padding: 0.5rem;
 }
 
 
@@ -355,7 +435,7 @@ img {
     font-size: 0.8rem;
     vertical-align:bottom;
     text-align: center;
-} */
+} 
 
 
 .main-msg {
@@ -448,7 +528,7 @@ footer {
     #send{
         width: 80%;
     }
-    
+
 
     
 }
