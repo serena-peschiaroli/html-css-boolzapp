@@ -363,7 +363,6 @@ img {
     overflow-y: scroll;   
     display: flex;
     flex-direction: column;
-    border: 1px solid black;
     background-image: url(../img/mine.jpg);
     background-size: cover;
     gap: 1.5rem;
@@ -384,7 +383,7 @@ img {
 }
 
 .ctc-msg {
-    background-color: var(--mic-gray);
+    background-color: white;
 }
 
 .right-msg {
@@ -413,5 +412,43 @@ img {
 
 footer {
     height: 80px;
-    background-color: gray;
+    background-color: var(--bar-gray);
+    width: 100%;
+}
+
+.send-msg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+}
+
+#send {
+    height: 60px;
+    width: 370px;
+    text-align: left;
+    padding: 0.5rem;
+    vertical-align: center;
+    border-radius: 10px;
+    border: none;
+}
+
+.btn-left , .btn-right {
+    color: var(--mic-gray);
+    font-size: 2rem;
+    display: none;
+}
+
+@media screen and (min-width: 540px) {
+
+    .btn-left,
+    .btn-right {
+        display: block;
+    }
+    #send{
+        width: 80%;
+    }
+    
+
+    
 }
