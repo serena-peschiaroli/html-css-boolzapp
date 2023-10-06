@@ -145,7 +145,7 @@ img {
 }
 
 .actions {
-    font-size: 1.5rem;
+    font-size: 1.3rem;
     padding-right: 1rem;
     height: 80px;
     line-height: 80px;
@@ -153,7 +153,11 @@ img {
     vertical-align: center;
     justify-content: flex-end;
     display: flex;
-    display: none;
+    display: none;  
+}
+
+.actions a {
+    color: gray;
 }
     
     
@@ -192,7 +196,8 @@ img {
 
 @media screen and (min-width: 991px) {
     .alert,
-    .alert-text {
+    .alert-text,
+    .actions {
         display: flex;
     }
 
@@ -216,7 +221,7 @@ img {
     display: none;
     justify-content: center;
     align-items: center;
-    background-color: var(--icon-gray);
+    background-color: lightgray;
 }
 .search-btn {
    
@@ -238,6 +243,7 @@ img {
     text-align: center;
     height: 40px;
     border-radius: 10px;
+    border: none;
 
 }
 
@@ -262,6 +268,7 @@ img {
 .chats {
     overflow-y: scroll;
     display: flex;
+    padding: 0.5rem;
     
     display: none;
     background-color: white;
@@ -368,18 +375,43 @@ img {
     background-color: var(--bar-gray);
     height: 80px;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+    
     padding: 0.5rem;
 
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: calc(100% - 90px);
 }
 
 .name {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
-    vertical-align: center;
+    justify-content: center;
 
+}
+
+.right-icons {
+    display: flex;
+    gap: 1rem;
+    vertical-align: center;
+    align-items: center;
+    justify-content: center;
+    
+    color: gray;
+    font-size: 1.3rem;
+}
+
+
+.name span:nth-child(2) {
+    font-size: 0.8rem;
+    color: gray;
+    
 }
 
 
@@ -421,27 +453,21 @@ img {
 }
 .small-text {
     display: flex;
-    flex-wrap: wrap;
-    gap: 2.8rem;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
     text-align: right;
-    
-    
-
+    align-items: flex-end;
 }
 
 .arrow-down {
-
-    vertical-align:text-top;
-    
-
+    font-size: 0.7rem;
+    color: gray;
 }
 
 
 .time {
-    font-size: 0.8rem;
-    vertical-align:bottom;
-    text-align: center;
+    font-size: 0.6rem;
+   color: gray;
 } 
 
 
@@ -484,17 +510,6 @@ img {
     justify-content: flex-end;
     text-align: right;
 }
-
-.arrow-down {
-    vertical-align: text-top;
-}
-
-.time {
-    font-size: 0.8rem;
-    vertical-align: bottom;
-    text-align: center;
-}
-
 
 
 footer {
