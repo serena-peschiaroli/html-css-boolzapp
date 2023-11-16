@@ -179,6 +179,7 @@ createApp ({
             const lastReceivedMessage = this.getLastReceivedMessage(contact);
             //this.getLastReceivedMessage viene inserita nella variabile getLastReceivedMessage, che continene l'oggetto relativo
             // operatore ternario che controlla se lastrecevedmessage non sia né null né undefined e ritorna lastreceivedmsg
+            console.log(lastReceivedMessage);
             return lastReceivedMessage ? lastReceivedMessage.message : '';
         },
         getLastReceivedMessage(contact){
@@ -192,6 +193,7 @@ createApp ({
         getLastReceivedMessageTime(contact){
             const lastReceivedMessage = this.getLastReceivedMessage(contact);
             return lastReceivedMessage ? lastReceivedMessage.date : '';
+            console.log(lastReceivedMessage.date);
         }
 
     }
