@@ -57,16 +57,16 @@
                 <div class="contact" v-for ="contact in contacts" :key="contact.name">
                     <!-- avatar del contatto -->
                     <div class="contact-logo">
-                        <img :src="'assets/img/avatar_' + contact.avatar + '.jpg'" :alt="'Avatar' +  contact.name">
+                        <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" :alt="'Avatar' +  contact.name">
                     </div>
                     <!-- Nome del contatto e orario dell'ultimo messaggio -->
                     <div class="contact-info">
                         <h3>
                             <span class="contact-name">{{ contact.name }}</span>
-                            <span class="time">16:15</span>
+                            <span class="time">{{ getLastReceivedMessageTime(contact) }}</span>
                         </h3>
                         <!-- Anteprima del messaggio -->
-                        <small>Lorem ipsum dolor sit amet</small>
+                        <small>{{  getLastReceivedMessageText(contact) }}</small>
                     </div>
                 </div>
             </div>

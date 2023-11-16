@@ -173,6 +173,19 @@ createApp ({
         };
     },
     methods: {
+        getLastReceivedMessageText(contact) {
+            const getLastReceivedMessage = this.getLastReceivedMessage(contact);
+            return getLastReceivedMessage ? getLastReceivedMessage.message : '';
+        },
+        getLastReceivedMessage(contact){
+            const receivedMessages = contact.messages.filter(message => message.status === 'received');
+            return receivedMessages.length > 0 ? receivedMessages[receivedMessages.length - 1] : null;
+
+        },
+        getLastReceivedMessageTime(contact){
+            const lastReceivedMessage = this.getLastReceivedMessage(contact);
+            return lastReceivedMessage ? lastReceivedMessage.date : '';
+        }
 
     }
 }).mount("#app");
