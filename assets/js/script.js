@@ -174,12 +174,19 @@ createApp ({
     },
     methods: {
         getLastReceivedMessageText(contact) {
-            const getLastReceivedMessage = this.getLastReceivedMessage(contact);
-            return getLastReceivedMessage ? getLastReceivedMessage.message : '';
+            //funione che usa gestLastReceivedMessage come helper, richiamala funzione per prendere l'ultimo msg con status 'received' passando contact come argomento;
+            
+            const lastReceivedMessage = this.getLastReceivedMessage(contact);
+            //this.getLastReceivedMessage viene inserita nella variabile getLastReceivedMessage, che continene l'oggetto relativo
+            // operatore ternario che controlla se lastrecevedmessage non sia né null né undefined e ritorna lastreceivedmsg
+            return lastReceivedMessage ? lastReceivedMessage.message : '';
         },
         getLastReceivedMessage(contact){
+            // funzione "helper method" .> per poter recuperare il messaggio e l'orario 
             const receivedMessages = contact.messages.filter(message => message.status === 'received');
+            //prende l'obj contact come argomento e ritortna l'ultimo msg per quel contatto; filtra i messaggio per includere SOLO quelli con status 'received
             return receivedMessages.length > 0 ? receivedMessages[receivedMessages.length - 1] : null;
+            //ritorna l'ultimo messaggio con status 'received' (length-1);
 
         },
         getLastReceivedMessageTime(contact){
