@@ -54,7 +54,7 @@
             <!-- Lista dei contatti -->
             <div class="contacts">
                 <!-- Singolo contatto -->
-                <div class="contact" v-for ="contact in contacts" :key="contact.name">
+                <div class="contact" v-for ="contact in contacts" :key="contact.name" @click="showConversation(contact)">
                     <!-- avatar del contatto -->
                     <div class="contact-logo">
                         <img :src="'assets/img/avatar' + contact.avatar + '.jpg'" :alt="'Avatar' +  contact.name">
@@ -93,11 +93,14 @@
             <div class="right-messages-container">
                 <div class="right-messages">
                      <!-- Messaggio inviato -->
-                    <div class="message sent">
+                     <!-- v for per iterare ogni .messaggio in activeContact.messages -->
+                     <!-- :class appleica differenti classi basandosi sulle condizioni, se message = true aggiunge la classe message, sent: message.status===sent aggiunge la classe sent se il messaggio.status è sent; received:message.status===received aggiunge classe received se status:received -->
+
+                    <div class="message sent" v-for="message in activeContact.messages" :key="message.date" :class="{ 'message':true, 'sent': message.status === 'sent', 'received': message.status === 'received'}" >
                         <div class="message-inner">
                             <!-- Testo del messaggio e opzioni -->
                             <span class="message-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eos blanditiis architecto expedita aspernatur quasi, et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde laboriosam doloremque?
+                                {{ message.message}}
                             </span>
                             <!-- Opzioni del messaggio -->
                             <div class="message-options">
@@ -109,29 +112,10 @@
                             </div>
                         </div>
                          <!-- Orario del messaggio -->
-                        <span class="message-time">16:13</span>
+                        <span class="message-time">{{ message.date}}</span>
                     </div>
                     <!-- messaggio ricevuto -->
-                    <div class="message received">
-                        <div class="message-inner">
-                            <!-- testo messaggio ricevuto -->
-                            <span class="message-text">
-                                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat eos blanditiis architecto expedita
-                                aspernatur quasi, et nobis aut officiis soluta voluptates nesciunt voluptate ipsa fuga rerum doloribus, unde
-                                laboriosam doloremque?
-                            </span>
-                            <!-- opzioni messaggio ricevuto -->
-                            <div class="message-options">
-                                <i class="fa fa-chevron-down"></i>
-                                <div class="message-options-panel">
-                                    <div class="message-info">Info messaggio</div>
-                                    <div class="message-destroy">Cancella messaggio</div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- orario messaggio ricevuto -->
-                        <span class="message-time">16:15</span>
-                    </div>
+                    
                 </div>
             </div>
             <!-- Footer destro (input del nuovo messaggio) -->

@@ -168,6 +168,8 @@ createApp ({
                     ],
                 },
             ],
+            //inizializzare activecontact come il primo contatto
+            activeContact : this.contacts[0],
             
 
         };
@@ -194,6 +196,9 @@ createApp ({
             const lastReceivedMessage = this.getLastReceivedMessage(contact);
             return lastReceivedMessage ? lastReceivedMessage.date : '';
             console.log(lastReceivedMessage.date);
+        },
+        showConversation(contact) {
+            this.activeContact = contact;
         }
 
     }
