@@ -5,6 +5,7 @@ console.log(dt.now().setLocale('it').toLocaleString(dt.DATETIME_FULL_WITH_SECOND
 createApp ({
     data(){
         return{
+            activeContact : null,
             contacts: [
                 {
                     name: 'Michele',
@@ -168,10 +169,7 @@ createApp ({
                     ],
                 },
             ],
-            //inizializzare activecontact come il primo contatto
-            activeContact : this.contacts[0],
             
-
         };
     },
     methods: {
@@ -199,7 +197,9 @@ createApp ({
         },
         showConversation(contact) {
             this.activeContact = contact;
-        }
+        },
+        
 
-    }
+    },
+    
 }).mount("#app");

@@ -68,6 +68,7 @@
                         <!-- Anteprima del messaggio -->
                         <small>{{  getLastReceivedMessageText(contact) }}</small>
                     </div>
+                    
                 </div>
             </div>
         </div>
@@ -96,7 +97,7 @@
                      <!-- v for per iterare ogni .messaggio in activeContact.messages -->
                      <!-- :class appleica differenti classi basandosi sulle condizioni, se message = true aggiunge la classe message, sent: message.status===sent aggiunge la classe sent se il messaggio.status è sent; received:message.status===received aggiunge classe received se status:received -->
 
-                    <div class="message sent" v-for="message in activeContact.messages" :key="message.date" :class="{ 'message':true, 'sent': message.status === 'sent', 'received': message.status === 'received'}" >
+                    <div class="message sent" v-for="message in activeContact ? activeContact.messages.filter(msg => msg.status === 'sent') : []" :key="message.date" >
                         <div class="message-inner">
                             <!-- Testo del messaggio e opzioni -->
                             <span class="message-text">
@@ -115,6 +116,21 @@
                         <span class="message-time">{{ message.date}}</span>
                     </div>
                     <!-- messaggio ricevuto -->
+                    <div class="message received" v-for="message in activeContact ? activeContact.messages.filter(msg => msg.status === 'received') : []" :key="message.date">
+                        <div class="message-inner">
+                            <span class="message-text">
+                                {{ message.message }}
+                            </span>
+                            <div class="message-options">
+                                <i class="fa fa-chevron-down"></i>
+                                <div class="message-options-panel">
+                                    <div class="message-info">Info messaggio</div>
+                                    <div class="message-destroy">Cancella messaggio</div>
+                                </div>
+                            </div>
+                        </div>
+                        <span class="message-time">{{ message.date }}</span>
+                    </div>
                     
                 </div>
             </div>
